@@ -10,11 +10,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static utils.ConfProperties.getProperty;
 
 public class WebHooks {
+
     @BeforeAll
     public static void setupAllureReports() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
@@ -29,6 +32,7 @@ public class WebHooks {
         Configuration.browser = Browsers.CHROME;
         open(getProperty("website"));
         WebDriverRunner.getWebDriver().manage().window().maximize();
+        WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AfterEach
