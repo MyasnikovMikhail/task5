@@ -11,4 +11,6 @@ public class AddRemoveElementsPage {
     public static SelenideElement addElementButton = $x("//button[.='Add Element']").as("Кнопка добавить элемент");
 
     public static ElementsCollection deleteButton = $$x("//button[.='Delete']").as("Кнопка удалить");
+
+
 }

@@ -7,6 +7,6 @@ import static com.codeborne.selenide.Selenide.$x;
 public class MainPage {
 
     public static SelenideElement selectExample(String textExample) {
-        return $x("//li/a[@href and . = '" + textExample + "']").scrollTo().as("Выбор примера: " + textExample);
+        return $x("//li/a[@href and . = '" + textExample + "']").scrollTo().as("Выбор и прокрутка до примера: " + textExample);
     }
 }

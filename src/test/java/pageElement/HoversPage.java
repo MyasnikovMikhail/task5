@@ -12,7 +12,11 @@ public class HoversPage {
         return $x("//div[@class='figure'][" + number + "]").as("Аватар под номером " + number);
     }
 
-    public static ElementsCollection infoNameAvatars = $$x("//h5");
+    public static SelenideElement infoNameAvatars(int number) {
+        return $x("//div[@class='figcaption']/h5[.='name: user" + number +"']").as("Имя аватара №" + number);
+    }
 
-    public static ElementsCollection infoLinkAvatars = $$x("//a[.='View profile']");
+    public static SelenideElement infoLinkAvatars(int number) {
+        return $x("//div[@class='figcaption']/a[@href = '/users/" + number + "']").as("Личная ссылка аватара №" + number);
+    }
 }
