@@ -17,8 +17,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <selenide.version>7.2.3</selenide.version>
         <junit.platform.version>1.7.2</junit.platform.version>
-        <junit.jupiter.version>5.7.0</junit.jupiter.version>
-        <junit.vintage.version>5.7.0</junit.vintage.version>
+        <junit.jupiter.version>5.8.0</junit.jupiter.version>
+        <junit.vintage.version>5.8.0</junit.vintage.version>
         <restAssured.version>4.3.1</restAssured.version>
         <log4j.version>1.2.17</log4j.version>
         <log4jCore.version>2.13.2</log4jCore.version>
@@ -131,18 +131,6 @@
             <version>${aspectj.version}</version>
         </dependency>
     </dependencies>
-
-<!--    <dependencyManagement>-->
-<!--        <dependencies>-->
-<!--            <dependency>-->
-<!--                <groupId>io.qameta.allure</groupId>-->
-<!--                <artifactId>allure-bom</artifactId>-->
-<!--                <version>2.24.0</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--        </dependencies>-->
-<!--    </dependencyManagement>-->
 
     <build>
         <plugins>
