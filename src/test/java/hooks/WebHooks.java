@@ -34,6 +34,7 @@ public class WebHooks {
     public void authenticationProcess() {
 //        System.setProperty("webdriver.chrome.driver", "/home/ubereak/IdeaProjects/CollectionOfVacancies/chromedriver");
         Configuration.browser = Browsers.CHROME;
+        Configuration.browserVersion="120.0";
         open(cfg.baseUrl());
         WebDriverRunner.getWebDriver().manage().window().maximize();
         WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
