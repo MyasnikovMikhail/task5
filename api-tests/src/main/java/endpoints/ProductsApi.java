@@ -3,6 +3,8 @@ package endpoints;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
+import java.util.Optional;
+
 public class ProductsApi extends BasicApi {
 
     public ProductsApi(String token) {
@@ -15,9 +17,20 @@ public class ProductsApi extends BasicApi {
                 .post(Urls.CART);
     }
 
-    @Step("Получить список продуктов в корзине c авторизацией")
+    @Step("Добавить продукт в корзину c авторизацией")
     public Response postProductsAuth(int productId, int quantity) {
         return getBuilder().body("""
+                        {
+                        "product_id": %d,
+                          "quantity": %d
+                        }
+                        """.formatted(productId,quantity))
+                .post(Urls.CART);
+    }
+
+    @Step("Добавить продукт в корзину без авторизации")
+    public Response postProductsNotAuth(int productId, int quantity) {
+        return getBuilderWithoutAuth().body("""
                         {
                         "product_id": %d,
                           "quantity": %d
@@ -37,5 +50,7 @@ public class ProductsApi extends BasicApi {
         return getBuilderWithoutAuth()
                 .get(Urls.PRODUCTS + "/" + id);
     }
+
+
 
 }

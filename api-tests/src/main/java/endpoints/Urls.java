@@ -7,5 +7,5 @@ public class Urls {
 
     public static final String PRODUCTS = "/products";
 
-    public static final String CART = "/products/cart";
+    public static final String CART = "/cart";
 }

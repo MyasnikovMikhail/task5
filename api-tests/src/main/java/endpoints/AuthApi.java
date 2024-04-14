@@ -9,11 +9,15 @@ import static utils.ConfProperties.getProperty;
 
 public class AuthApi {
 
-    @Step("Зарегистрировать нового пользователя 'login'")
+    @Step("Зарегистрировать нового пользователя 'login' и авторизация под ним")
     public static Response registerNewUser(String login, String password) {
-        return new RestApiBuilder(getProperty("BASE_URL_API")).build()
+        new RestApiBuilder(getProperty("BASE_URL_API")).build()
                 .body(new DTOUser(login, password))
                 .post(Urls.REGISTER);
+        return new RestApiBuilder(getProperty("BASE_URL_API")).build()
+                .body(new DTOUser(login, password))
+                .post(Urls.LOGIN);
+
     }
 
     @Step("Авторизоваться под пользователем 'login'")
