@@ -58,16 +58,6 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0</version>
             </plugin>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>2.10.0</version>
-                <configuration>
-                    <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>${basedir}/allure-results</resultsDirectory>
-                    <reportDirectory>${basedir}/target/allure-reports</reportDirectory>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
