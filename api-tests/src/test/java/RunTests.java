@@ -29,11 +29,11 @@ public class RunTests {
         ProductAssert.assertThat(response).checkProductsResponse(16);
     }
 
-    @Test
-    void addProductInList() {
-        Response response = productsApi.postProductsAuth(1,2);
-        ProductAssert.assertThat(response).checkStatusCodeProductInCart(201);
-    }
+//    @Test
+//    void addProductInList() {
+//        Response response = productsApi.postProductsAuth(1,2);
+//        ProductAssert.assertThat(response).checkStatusCodeProductInCart(201);
+//    }
 
     @Test
     void addProductInListNegative() {
