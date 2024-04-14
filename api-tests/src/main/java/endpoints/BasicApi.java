@@ -28,8 +28,12 @@ public class BasicApi {
 
     @Step("Получение токена")
     public static String getTokenForPerson(String username, String password) {
-        Optional<String> token = AuthApi.loginUser(username, password).jsonPath().getString("access_token").describeConstable();
-        return token.orElseGet(() -> AuthApi.registerNewUser(username, password).jsonPath().getString("access_token"));
+        Optional<String> token = AuthApi.loginUser(username, password).jsonPath().toString().describeConstable();
+        if (token.isPresent()) {
+            return AuthApi.loginUser(username, password).jsonPath().getString("access_token");
+        } else {
+            return AuthApi.registerNewUser(username, password).jsonPath().getString("access_token");
+        }
     }
 
 }

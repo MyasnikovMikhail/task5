@@ -13,7 +13,7 @@ public class RunTests {
 
     @BeforeEach
     void getAuthToken() {
-        String token = AuthApi.loginUser("mmk", "mmk").jsonPath().getString("access_token");
+//        String token = AuthApi.loginUser("mmk", "mmk").jsonPath().getString("access_token");
         productsApi = new ProductsApi(BasicApi.getTokenForPerson("mmk12", "mmk12"));
     }
     @Test
