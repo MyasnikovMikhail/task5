@@ -33,7 +33,7 @@ public class WebHooks {
     @Step("Переход на сайт")
     public void authenticationProcess() {
 //        System.setProperty("webdriver.chrome.driver", "/home/ubereak/IdeaProjects/CollectionOfVacancies/chromedriver");
-//        Configuration.browser = Browsers.CHROME;
+        Configuration.browser = Browsers.CHROME;
         open(cfg.baseUrl());
         WebDriverRunner.getWebDriver().manage().window().maximize();
         WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
