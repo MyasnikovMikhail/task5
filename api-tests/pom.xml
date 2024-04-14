@@ -11,16 +11,35 @@
     </parent>
 
     <artifactId>api-tests</artifactId>
+
+    <properties>
+    <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <allure.version>2.13.2</allure.version>
+        <restAssured.version>4.3.1</restAssured.version>
+
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-selenide</artifactId>
             <version>${allure.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-rest-assured</artifactId>-->
+<!--            <version>${allure.version}</version>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-rest-assured</artifactId>
-            <version>${allure.version}</version>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restAssured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
